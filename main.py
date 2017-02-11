@@ -192,8 +192,6 @@ class WebhookHandler(webapp2.RequestHandler):
             else:
                 reply('What command?')
 
-        # CUSTOMIZE FROM HERE
-
         elif 'who are you' in text:
             reply('ComputerVisionBot, created by starkov79 - https://github.com/starkov79/Computer-Vision-Bot')
         else:
