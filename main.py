@@ -14,7 +14,7 @@ from google.appengine.api import urlfetch
 from google.appengine.ext import ndb
 import webapp2
 
-TOKEN = '261317843:AAHOsKj2xI3vccPqhw3gkdAVT0RktIE1DWc'
+TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
 
 BASE_URL = 'https://api.telegram.org/bot' + TOKEN + '/'
 
@@ -118,7 +118,7 @@ class WebhookHandler(webapp2.RequestHandler):
         def recognize(link=None):
             url = 'https://api.projectoxford.ai/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=age,gender,smile,glasses'
             data = str(json.dumps({ 'url': link }))               
-            headers = { 'Content-type': 'application/json', 'Ocp-Apim-Subscription-Key': '6b750583514647a8baefdd2b927ea392' }
+            headers = { 'Content-type': 'application/json', 'Ocp-Apim-Subscription-Key': 'YOUR_MICROSOFT_COGNITIVE_SERVICE_TOKEN' }
             request = urllib2.Request(url, data, headers)
             json_str_response = json.dumps(json.load(urllib2.urlopen(request)))
             json_data_response = json.loads(json_str_response)
